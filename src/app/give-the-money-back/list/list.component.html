@@ -1,0 +1,7 @@
+<div>
+    <mat-form-field>
+        <input matInput placeholder="Address of the contract" name="address" [formControl]="searchCtrl">
+      </mat-form-field>
+      
+      <app-thumbnail [request]="filteredRequest" *ngIf="filteredRequest" (click)="goToDetail()"></app-thumbnail>
+</div>

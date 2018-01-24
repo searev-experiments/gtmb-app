@@ -1,0 +1,27 @@
+<div *ngIf="loaded">
+
+  <div>
+    <h1>Request</h1>
+    <span>{{request.address}}</span>
+  </div>
+
+  <div> <h3>To:</h3> <span>{{request.receiver}}</span> </div>
+  <div> <h3>Amount:</h3> <span>{{request.amount / 10e18 }} eth</span> </div>
+  <div>
+    <h3>Description</h3>
+    <p>{{request.description}}</p>
+   </div>
+  
+   <div>
+     <h3>Supported by:</h3>
+     <ul>
+       <li *ngFor="let backer of request.backers">{{backer}}</li>
+     </ul>
+   </div>
+  
+   <div>
+     <button mat-raised-button *ngIf="canPayDebt()" (click)="goBack()">Keep the money</button>
+     <button mat-raised-button *ngIf="canPayDebt()" (click)="pay()">Give the money back</button>
+     <button mat-raised-button *ngIf="canBackUp()" (click)="backUp()">Support the request</button>
+    </div>
+</div>

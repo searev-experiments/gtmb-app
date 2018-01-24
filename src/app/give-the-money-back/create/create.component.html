@@ -1,0 +1,19 @@
+<h1>Create a request</h1>
+
+<form (submit)="onSubmit()" #loginForm="ngForm">
+
+  <mat-form-field>
+    <input matInput placeholder="Request money from" name="recipient" [(ngModel)]="request.receiver">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Amount in ether" name="amount" type="number" [(ngModel)]="request.amount">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="description" name="recipient" [(ngModel)]="request.description"></textarea>
+  </mat-form-field>
+
+  <button mat-button>Request the money</button>
+
+</form>

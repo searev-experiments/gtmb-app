@@ -1,0 +1,13 @@
+mat-form-field {
+    width: 100%;
+    font-size: 1.6rem;
+    margin-top: 42px;
+}
+
+h1, h3 {
+    font-family: "Roboto Light", "Roboto", "Arial", sans-serif;
+}
+
+app-thumbnail:hover {
+    cursor: pointer
+}
