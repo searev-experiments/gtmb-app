@@ -1,27 +1,50 @@
-# GtmbApp
+# Give The Money Back ! - Smart Contract
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+## Description
 
-## Development server
+This repository contains the code of the smart contract used for the *Give the Money Back !* experiment, and is used in the article [Building a DApp with the Ethereum blockchain and Angular 5 - part 2:
+the service](http://huberisation.eu/2018/01/24/building-app-angular-ethereum-part-2/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It allows to:
+* Publish an instance of the [GiveTheMoneyBack](https://github.com/searev-experiments/gtmb-smart-contract) smart contract on an Ethereum network
+* Fetch an existing instance of the contract
+* Back up the request and pay the debt
 
-## Code scaffolding
+## Requirements
+* NodeJS > 6.9
+* Truffle v4.0.5
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You can install Truffle using npm:
 
-## Build
+```
+$ npm install -g truffle
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Build and test the smart contract
 
-## Running unit tests
+Once you have clone the repository, launch the *Truffle development* environment using
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+$ truffle develop
+```
 
-## Running end-to-end tests
+There, you can run the test using
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+$ truffle(develop)> test
+```
 
-## Further help
+It should automatically run the migrations and test the contracts, so you have the latest version of the artifacts in the `build/` folder.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Run the app locally
+
+Once the truffle development blockchain is running, you can test you app locally using
+
+```
+$ ng serve
+```
+
+Simply browse at `127.0.0.1:4200`.
+
+## To Do:
+* Use Metamask instead of relying on a local http provider
